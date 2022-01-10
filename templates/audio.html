@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mp3 converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bg.mp4') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/x-icon">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <div  id="videohome" class="video-container">
+            <div class="color-overlay" id="videoBC"></div>
+            <video id="videoBG" poster="{{ url_for('static', filename='bg.mp4') }}" autoplay loop muted>
+                <source src="{{ url_for('static', filename='bg.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+
+
+<style>
+.footer {
+  color: #FFC300;
+  text-align: center;
+  font-size:20px;
+  font-weight:bold;
+  }
+</style>
+
+<style>
+
+video {
+  width: 100%;
+}
+
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: lightblue;
+  width: 100%;
+  height: 113vh;
+  opacity: 0.8;
+}
+</style>
+</head>
+<body >
+
+
+<h2 style="text-align:center;font-size:200%;color:red; position:relative;" onClick="window.location.reload();" >YouTube Video to Mp3 Converter</h2>
+
+
+<div class="row">
+    <form class="col s12 center-align" action="/audio" method="POST">
+        <div class="row">
+            <div class="input-field col s8 offset-s2">
+                        <h2 style="position:relative;text-align:center;font-size:200%;top:35px;color:#FF9966 ;" >Download Audio</h2>
+        <center><input  class="form-control form-control-lg" type="text" placeholder="Enter URL " style= "position:relative;  top:90px; width:550px;  font-size: 20pt; height: 45px;  color:black;border:4px solid black;" align="center"  name="URL" autocomplete="off"></center>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <center><button  type="submit" name="action"   style=" background-color:#FFCC99;border:5px solid #FFCC99; width:180px;  position:relative;  top:140px;">
+                    Download
+                </button></center>
+            </div>
+        </div>
+    </form>
+</div>
+
+        <h1 style="text-align:center; position:relative;  top:150px;">How to use YouTube Audio Downloader?</h1>
+        <p style="text-align:center;font-size:180%; position:relative;  top:125px;">1.Copy URL from YouTube</p>
+        <p style="text-align:center;font-size:180%; position:relative;  top:100px;">2.Paste the URL in the text box</p>
+        <p style="text-align:center;font-size:180%; position:relative;  top:75px;">3.Click the Download button </p>
+
+
+<div class="footer">
+  <p style="text-align:center;font-size:150%; position:relative;  top:140px;">Website by- Dream works</p>
+</div>
+
+
+</body>
+</html>
